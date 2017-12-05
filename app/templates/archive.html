@@ -1,0 +1,25 @@
+<section class="hero-content">
+  <h1 class="hero-title">Archive</h1>
+</section>
+
+<!-- <section class="new-task">
+  <div class="new-task-field">
+    <input type="text" class="task-field" ng-model="messageTitle" placeholder="Name your new task">
+    <input type="text" class="task-field" ng-model="messageDescription" placeholder="Describe your new task">
+    <select class="priority" ng-model="taskPriority">
+      <option value="3">High</option>
+      <option value="2">Medium</option>
+      <option value="1" >Low</option>
+    </select>
+    <button class="submit" ng-click="home.addTask( messageDescription, taskPriority)">Add Task</button>
+  </div>
+</section> -->
+
+<section class="task-content">
+  <div class="task-list" ng-repeat="task in archive.list | filterDateCompleted">
+    <div ng-hide="archive.show(task)">
+      <p class="created at">Created: {{task.created_at | date: 'short'}}</p>
+      <p class="task-description">Description: {{ task.description }}</p>
+    </div>
+  </div>
+</section>

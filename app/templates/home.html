@@ -1,1 +1,59 @@
 <h1>Home Page</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 style="text-decoration:underline">Active Tasks</h3>
+
+        <section class="task-content">
+          <div class="row" ng-repeat="task in home.list | filter:{completed:false}">
+            <div class="col-md-4">
+              <p class="created at">Created: {{task.created_at | date: 'short'}}</p>
+            </div>
+            <div class="col-md-4">
+              <p class="task-description">Description: {{task.description}}</p>
+            </div>
+            <div class="col-md-4">
+              <button type="button" class="btn btn-primary" ng-model="singleModel" ng-click="home.markCompleted(task)">
+                Completed?
+              </button>
+            </div>
+          </div>
+        </section>
+        </h4>
+      </div>
+        </h4>
+        <section class="new-task">
+          <div class="new-task-field">
+            <input type="text" class="task-field" ng-model="messageDescription" placeholder="Describe your new task">
+            <select class="priority" ng-model="taskPriority">
+              <option value="1">High</option>
+              <option value="2">Medium</option>
+              <option value="3" >Low</option>
+            </select>
+            <button class="submit" ng-click="home.addItem(messageDescription, taskPriority)">Add Task</button>
+          </div>
+        </section>
+    </div>
+  </div>
+</div>
+
+<!-- <section class="new-task">
+  <div class="new-task-field">
+    <input type="text" class="task-field" ng-model="messageDescription" placeholder="Describe your new task">
+    <select class="priority" ng-model="taskPriority">
+      <option value="1">High</option>
+      <option value="2">Medium</option>
+      <option value="3" >Low</option>
+    </select>
+    <button class="submit" ng-click="home.addItem(messageDescription, taskPriority)">Add Task</button>
+  </div>
+</section>
+
+<section class="task-content">
+  <ul ng-repeat="task in home.list">
+    <p class="created at">Created: {{task.created_at | date: 'short'}}</p>
+    <p class="task-description">Description: {{task.description}}</p>
+  </ul>
+
+</section> -->
